@@ -1,0 +1,9 @@
+@echo off
+echo Setting up environment...
+call "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
+
+echo Compiling...
+cl.exe /EHsc /O2 /arch:AVX2 /openmp /utf-8 /I include src\*.cpp /Fe:PyramidLSM.exe
+
+echo Running...
+PyramidLSM.exe
